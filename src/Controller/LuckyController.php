@@ -16,6 +16,15 @@ class LuckyController extends AbstractController
         );
     }
 
+    public function numberInit(int $max): Response
+    {
+        $number = random_int(0, $max);
+
+        return new Response(
+            '<html><body>Lucky number: '.$number.'</body></html>'
+        );
+    }
+
     /**
      * @Route("/lucky/number/twig")
      */
